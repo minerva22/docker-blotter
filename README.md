@@ -1,5 +1,5 @@
 # docker-blotter
-docker setup for ffa-blotter
+docker setup for [ffa-blotter](https://github.com/ffapb/ffa-blotter)
 
 # Usage
 
