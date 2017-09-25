@@ -1,0 +1,3 @@
+[submodule "build/blotter"]
+	path = build/blotter
+	url = https://github.com/ffapb/ffa-blotter
