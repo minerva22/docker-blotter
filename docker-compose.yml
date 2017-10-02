@@ -1,18 +1,17 @@
-version: '3'
+version: '2' # version: '3' requires docker version 1.13 and above
 services:
 
   blotter:
     image: ffapb/ffa-blotter
     build:
       context: ${PWD}/build/blotter/
-    Dockerfile
     ports:
     #- "8001:8000"
     - "8888:8000"
     volumes:
-    - /data/docker-blotter/blotter/:/var/lib/ffa-blotter/data/:ro
+    - /data/docker-blotter/blotter/:/var/lib/blotter/data/
     environment:
-    - MAYAN_HOST=http://elasticsearch1:9200
+    - MAYAN_HOST=http://mayanedms:9200
     - MAYAN_ADMIN_USER=admin
     # copy production.env.dist to production.env and modify
     env_file: production.env
@@ -20,6 +19,6 @@ services:
   mayanedms:
     image: mayanedms/mayanedms:2.7.3
     ports:
-    - "8006:80"
+    - "8007:80"
     volumes:
-    - /data/docker-blotter/mayan/:/var/lib/mayan/:ro
+    - /data/docker-blotter/mayan/:/var/lib/mayan/
